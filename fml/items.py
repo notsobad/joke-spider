@@ -10,3 +10,9 @@ class FmlItem(Item):
     # name = Field()
 	cont = Field()
 	url = Field()
+
+class JokeItem(Item):
+	cont = Field()
+	url = Field()
+	tags = Field()
+	score = Field()

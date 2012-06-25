@@ -11,18 +11,20 @@ import re
 
 
 class MySpider(CrawlSpider):
-	name = 'waduanzi'
-	allowed_domains = ['waduanzi.com']
-	start_urls = ["http://www.waduanzi.com/duanzi-1"]
+	name = 'jokecook'
+	allowed_domains = ['jokecook.com']
+	start_urls = ["http://www.jokecook.com/"]
 
 	def parse(self, response):
 		hxs = HtmlXPathSelector(response)
-		url = hxs.select('//div[@id="page-nav"]//li[@class="next"]/a/@href').extract()[0]
+		url = hxs.select('//div[@class="navigation"]/p/a[contains(text(), "Older")]/@href').extract()[0]
 
 		url = urlparse.urljoin(response.url, url)
 		self.log(url)
 		yield Request(url, callback=self.parse)
 		
-		for p in hxs.select('//div[@class="waterfall-item"]/p/a/text()').extract():
-			cont = re.sub(r'<[^>]*?>', '', p)
-			yield FmlItem(cont=cont, url='')
+		for p in hxs.select('//div[@class="postcontent"]/p').extract():
+			cont = re.sub(r'<[^>]*?>', ' ', p)
+			cont = re.sub(r'Via @[^\ ]*', '', cont)
+			cont = re.sub(r'#[^\ ]*', '', cont)
+			yield FmlItem(cont=cont.strip(), url='')
