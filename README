@@ -1,2 +1,10 @@
 
 A spider for fetching jokes from a few websites
+
+1. Install scrapy
+2. In the project dir, run 'scrapy crawl fml(or other spider)'
+
+
+Spiders are in  fml/ dir, like fml.py is the spider for http://www.fmylife.com/, if you run 'scrapy crawl fml',
+the result will be stored into fml.json.
+
