@@ -9,12 +9,12 @@ Spiders are stored in  fml/spiders dir, like sickipedia.py is the spider for htt
 if you run 'scrapy crawl sickipedia', the result will be stored into sickipedia.json.
 
 
-Aliable sites:
+Available sites:
 
-	waduanzi.com
-	tduanzi.com
-	haoduanzi.com
-	fmylife.com
-	duanziwang.com
-	jokecook.com
-	sickipedia.org
+	http://waduanzi.com
+	http://tduanzi.com
+	http://haoduanzi.com
+	http://fmylife.com
+	http://duanziwang.com
+	http://jokecook.com
+	http://sickipedia.org
