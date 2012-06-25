@@ -5,6 +5,16 @@ A spider for fetching jokes from a few websites
 2. In the project dir, run 'scrapy crawl fml(or other spider)'
 
 
-Spiders are in  fml/ dir, like fml.py is the spider for http://www.fmylife.com/, if you run 'scrapy crawl fml',
-the result will be stored into fml.json.
+Spiders are stored in  fml/spiders dir, like sickipedia.py is the spider for http://www.sickipedia.org/, 
+if you run 'scrapy crawl sickipedia', the result will be stored into sickipedia.json.
 
+
+Aliable sites:
+
+	waduanzi.com
+	tduanzi.com
+	haoduanzi.com
+	fmylife.com
+	duanziwang.com
+	jokecook.com
+	sickipedia.org
