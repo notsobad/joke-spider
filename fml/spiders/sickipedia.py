@@ -13,7 +13,7 @@ import re
 class MySpider(CrawlSpider):
 	name = 'sickipedia'
 	allowed_domains = ['sickipedia.org']
-	start_urls = ["http://www.sickipedia.org/getjokes/all?page=23390&sortcolumn=age&direction=asc&l=1"]
+	start_urls = ["http://www.sickipedia.org/getjokes/all?page=1&sortcolumn=age&direction=asc&l=1"]
 
 	def parse(self, response):
 		hxs = HtmlXPathSelector(response)
